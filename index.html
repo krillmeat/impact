@@ -2,10 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>TITLE</title>
+        <title>IMPACT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="CSS/fonts.css">
         <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="stylesheet" href="CSS/minefield.css">
     </head>
     <body>
         <!-- NAVIGATION -->
@@ -13,7 +15,7 @@
             <nav class='top'>
                 <div class='mobile'>
                     <a class='logo' href='#'>
-                        Logo
+                        Impact
                     </a>
                     <button class='mobile-menu'>
                         <div class='rect'></div><div class='rect'></div><div class='rect'></div>
@@ -21,12 +23,10 @@
                 </div>
                 <div class='desktop'>
                     <a class='logo' href="#">
-                        Logo
+                        Impact
                     </a>
                     <ul>
-                        <li><a href='#'>Link</a></li>
-                        <li><a href='#'>Link</a></li>
-                        <li><a href='#'>Link</a></li>
+                        <li><a href='#'>Learn More</a></li>
                     </ul>
                 </div>
             </nav>
@@ -34,11 +34,82 @@
 
         <!-- HERO -->
         <section id='hero' class='hero'><div class='content-wrap'>
+          <div class='top'><!----></div>
+          <div class='center'>
+            <h2>What is your</h2>
+           <img class='center-logo' src='MEDIA/main-logo.svg'/>
+          </div>
+          <a href='#quiz'>Questionnaire<span><!----></span></a>
+        </div></section>
 
+        <section id='quiz' class='quiz'><button class='prev'>&lt;</button><div class='content-wrap'>
+          <h2>Global Footprint Questionaire</h2>
+          <form>
+            <div class='step step-one'>
+              <div class='top'>
+                <div class='blob'>
+                  <p>1</p>
+                </div>
+                <h3>How often do you eat animal-based&nbsp;products?</h3>
+              </div>
+              <div class='slider'>
+                <p class='min'>Never</p>
+                <input type='range' min='0' max='4' value='3'/>
+                <p class='max'>Very Often</p>
+                <p class='curr'>often</p>
+              </div>
+            </div>
+            <div class='step step-two'>
+              <div class='top'>
+                <div class='blob'>
+                  <p>2</p>
+                  <img src='MEDIA/SQUARES/1-gray.png'/>
+                </div>
+                <h3>How much of the food that you eat is unprocessed, unpackaged, or locally grown?</h3>
+              </div>
+              <div class='slider'>
+                <p class='min'>None</p>
+                <input type='range' min='0' max='99' value='50'/>
+                <p class='max'>All</p>
+                <p class='curr'>50%</p>
+              </div>
+            </div>
+            <div class='step step-three'>
+              <h3>Which housing type best describes your home?</h3>
+              <label for='no-water'>Freestanding, no running water</label><input id='no-water' type='radio'/>
+              <label for='water'>Freestanding, running water</label><input id='water' type='radio'/>
+              <label for='apartment'>Multi-story apartment</label><input id='apartment' type='radio'/>
+              <label for='duplex'>Duplex, row house, or building with 2-4 housing units</label><input id='duplex' type='radio'/>
+              <label for='condo'>Luxury condominium</label><input id='condo' type='radio'/>
+            </div>
+            <div class='step step-four'>
+              <h3>What material is your house constructed with?</h3>
+              <label for='straw'>Straw/Bamboo</label><input id='straw' type='radio'/>
+              <label for='wood'>Wood</label><input id='wood' type='radio'/>
+              <label for='brick'>Brick/Concrete</label><input id='brick' type='radio'/>
+              <label for='adobe'>Adobe</label><input id='adobe' type='radio'/>
+              <label for='steel'>Steel/Other</label><input id='steel' type='radio'/>
+            </div>
+          </form>
+          <p class='disclaimer'>This questionaire was taken from the Global Footprint Network&reg;</p>
+        </div><button class='next'>&gt;</button></section>
+
+        <section id='minefield' class='minefield'><div class='content-wrap'>
+          <p class='instructions'>Based on your answers, we've set up a game of Minesweeper for you to play!</p>
+          <div id='minefield-game'> <!-- Minefield --> </div>
+        </div></section>
+
+        <section id='result' class='result'><div class='content-wrap'>
+          <div id='poster'><!-- JS --></div>
         </div></section>
 
         <!-- SCRIPTS -->
         <script type='text/javascript' src='JS/utils.js'></script>
         <script type='text/javascript' src='JS/scripts.js'></script>
+
+        <script type='text/javascript' src='JS/tile.js'></script>
+        <script type='text/javascript' src='JS/minefield.js'></script>
+        <script type='text/javascript' src='JS/quiz.js'></script>
+        <script type='text/javascript' src='JS/poster.js'></script>
     </body>
 </html>

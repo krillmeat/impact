@@ -1,5 +1,19 @@
 /* http://meyerweb.com/eric/tools/css/reset/     v2.0 | 20110126    License: none (public domain) */  html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure,  footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; } body *{box-sizing: border-box} html{ scroll-behavior: smooth }
 
+
+body{ overflow: hidden }
+
+:root{
+  --orange: #FFA20F;
+  --blue: #72ECFC;
+}
+
+.screen-reader-only{
+  position: fixed;
+  top: -1000px; left: -1000px;
+  height: 0px; width: 0px; padding: 0px;
+}
+
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
@@ -79,10 +93,25 @@ nav.top button.mobile-menu .rect:last-of-type{
 ::::::::::::::::::::  DESKTOP                                                                ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-nav.top .desktop{}
+nav.top .desktop{
+  padding: 16px;
+}
+
+nav.top .desktop .logo{ opacity: 0 }
 
 nav.top .desktop ul{
   display: flex;
+}
+
+nav.top .desktop ul li a{
+  font-family: 'Univers',sans-serif;
+  font-size: .875em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+  
+  text-decoration: none;
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -97,9 +126,9 @@ section{
   width: 100%;
 }
 
-section .content-wrapper{
+section .content-wrap{
   width: 100%;
-    max-width: 1000px;
+    max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -109,4 +138,290 @@ section .content-wrapper{
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
-section.hero{}
+section.hero{
+  height: 100vh;
+}
+
+section.hero .content-wrap{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  max-width: 900px;
+  height: 100%;
+  padding: 32px;
+}
+
+section.hero .center{
+  width: 50%;
+  margin: 0 auto;
+}
+
+section.hero h2{
+  width: 100%;
+  font-family: 'Univers',sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+section.hero .center-logo{
+  width: 100%;
+  margin-top: -40px;
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+::::::::::::::::::::  QUIZ                                                                   ::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+section.quiz{
+  position: relative;
+  height: 100vh;
+}
+
+section.quiz button.prev,
+section.quiz button.next {
+  position: absolute;
+  top: calc(50% - 8px);
+  padding: 32px;
+  border: 1px solid #72ECFC;
+  background: none;
+}
+
+section.quiz button.prev{ left: 16px }
+section.quiz button.next{ right: 16px }
+
+
+section.quiz .content-wrap{
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+section.quiz h2{
+  margin-bottom: 200px;
+
+  font-size: .9em;
+  font-family: 'Universe', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+section.quiz form{
+  display: flex;
+  width: 500%;
+  transition: transform .4s linear;  
+}
+
+section.quiz p.disclaimer{
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+section.quiz form .slider{
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  width: 80%;
+  margin: 0;
+    margin-left: 20%;
+}
+
+section.quiz form .slider .min,
+section.quiz form .slider .max{
+  font-family: 'Univers',sans-serif;
+  font-size: 1.25em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section.quiz form .slider p:last-of-type{
+  width: 100%;
+  display: none;
+}
+
+section.quiz form input[type='range']{
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 2;
+  width: calc(50% - 16px);
+  height: 2px;
+  padding: 0px;
+  margin: 0 24px;
+  background: var(--blue);
+}
+
+section.quiz form input[type='range']::-webkit-slider-thumb{
+  appearance: none;
+  width: 16px; height: 16px;
+  background: var(--orange);
+  border: 2px solid var(--orange);
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::  STEP                                                                   ::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+section.quiz form .step{
+  width: 20%;
+  padding: 32px 200px;
+}
+
+section.quiz form .step .top{
+  display: flex;
+  min-height: 200px;
+  margin-bottom: 64px;
+}
+
+section.quiz form .step .top .blob{
+  position: relative;
+  width: 20%;
+}
+
+section.quiz form .step .top .blob p{
+  position: absolute;
+  top: -24px; right: 32px;
+  font-family: 'Bodoni', serif;
+  font-weight: 600;
+  font-size: 13em;
+  color: var(--orange);
+}
+
+section.quiz form .step .top .blob p::before{
+  content: '';
+  position: absolute;
+  top: 8px; left: 0px;
+  width: 90px; height: 90px;
+  border: 1px solid var(--blue);
+}
+
+section.quiz form .step .top .blob img{
+  position: absolute;
+  z-index: -1;
+  width: 170px; height: 170px;
+  top: 26px; left: -58px;
+}
+
+section.quiz .step h3{
+  width: 80%;
+  font-family: 'Univers', sans-serif;
+  font-size: 3.25em;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+::::::::::::::::::::  MINEFIELD                                                              ::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+section.minefield .content-wrap{
+  height: 100vh;
+  padding-top: 124px;
+}
+
+section.minefield .instructions{
+  font-family: 'Univers',sans-serif;
+  margin-bottom: 64px;
+}
+
+section.minefield .content-wrap #minefield-game{margin-bottom: 0px }
+
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+::::::::::::::::::::  RESULT                                                                 ::::::::::::::::::::
+::::::::::::::::::::                                                                         ::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+section.result{
+  height: 100vh;
+  padding: 10vh;
+}
+
+#poster{
+  display: flex;
+    justify-content: center;
+}
+
+section.result .poster-parent{
+  width: 80vh;
+  border: 1px solid var(--blue);
+}
+
+section.result .poster-row{
+  display: flex;
+  border-bottom: 1px solid var(--blue);
+  width: 80vh;
+}
+
+section.result .poster-row:last-of-type{
+  border-bottom: none;
+}
+
+section.result .poster-tile{
+  width:8vh; height: 8vh;
+  padding: 0;
+  text-align: center;
+  border-right: 1px solid var(--blue);
+  text-transform: uppercase;
+}
+
+section.result .poster-row .poster-tile:last-of-type{
+  border-right: none;
+}
+
+section.result .poster-row .poster-tile span{
+  display: block;
+}
+
+section.result .poster-row .poster-tile[data-bombs='1'] span{
+  font-family: 'Bodoni', serif;
+  font-size: 1.75em;
+
+  transform: translateY(2.25vh)
+}
+
+section.result .poster-row .poster-tile[data-bombs='2'] span{
+  font-family: 'Univers', sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+
+  transform: translateY(2.125vh)
+}
+
+section.result .poster-row .poster-tile[data-bombs='3'] span{
+  font-family: 'Univers', sans-serif;
+  font-weight: 600;
+  font-size: 3em;
+
+  transform: translateY(1.75vh)
+}
+
+section.result .poster-row .poster-tile[data-bombs='4'] span{
+  font-family: 'Univers', sans-serif;
+  font-weight: 600;
+  font-size: 8em;
+
+  transform: translate(-.75vh,-2.75vh)
+}
+
+section.result .poster-parent[data-outcome='lose'] .poster-row .poster-tile[data-bombs='3'],
+section.result .poster-parent[data-outcome='lose'] .poster-row .poster-tile[data-bombs='4']{
+  color: var(--orange);
+}
+
+section.result .poster-row .poster-tile[data-bombs='1'][data-adjacent='1'] span{ font-size: 1.25em; transform: translateY(2.75vh) }
+section.result .poster-row .poster-tile[data-bombs='1'][data-adjacent='3'] span,
+section.result .poster-row .poster-tile[data-bombs='1'][data-adjacent='4'] span,
+section.result .poster-row .poster-tile[data-bombs='1'][data-adjacent='5'] span{ font-size: 2em }

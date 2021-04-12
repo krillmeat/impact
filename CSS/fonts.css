@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Univers';
+  src: url(../FONTS/UniversLTStd.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Univers';
+  font-weight: 600;
+  src: url(../FONTS/UniversLTStd-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  src: url(../FONTS/BOD_R.TTF) format("truetype");
+}
+
+@font-face {
+  font-family: 'Bodoni';
+  font-weight: 600;
+  src: url(../FONTS/BOD_B.TTF) format("truetype");
+}
