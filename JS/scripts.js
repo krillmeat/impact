@@ -12,7 +12,7 @@ window.onload = function(){
 function buildMinefield(){
   console.log("CALLBACK");
   minefield = new Minefield(document.getElementById("minefield-game"),buildPoster);
-  minefield.buildMinefield("a");
+  minefield.buildMinefield("c");
   document.getElementById("minefield").scrollIntoView();
 }
 

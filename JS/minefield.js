@@ -16,7 +16,7 @@ class Minefield{
   buildMinefield(type){
       console.log("Minefield Type: ",type);
       this.type = type;
-      this.dimensions = [10,10];
+      this.dimensions = [12,12];
       this.totalTiles = this.dimensions[0] * this.dimensions[1];
 
       if(type == "a"){ 
@@ -94,7 +94,7 @@ class Minefield{
   
           if(this.clickedTiles >= this.totalTiles - this.bombCount){
               console.log("YOU DID IT!");
-              callback(this.elem,"win");
+              this.callback(this.elem,"win");
               this.gameOn = false;
           }
       }
