@@ -106,6 +106,7 @@ nav.top .desktop ul{
 }
 
 nav.top .desktop ul li a{
+  padding: 6px 8px 4px 12px;
   font-family: 'Univers',sans-serif;
   font-size: .875em;
   font-weight: 600;
@@ -114,6 +115,10 @@ nav.top .desktop ul li a{
   color: #000;
   
   text-decoration: none;
+}
+
+nav.top .desktop ul li a:hover{
+  background: var(--orange);
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -215,6 +220,19 @@ section.hero a{
   color: #000;
 }
 
+section.hero a img{
+  display: block;
+  width: 50px; height: 50px;
+  border: 1px solid var(--blue);
+  padding: 8px;
+  margin: 16px auto 0 auto;
+}
+
+section.hero a:hover img{
+  background: var(--orange);
+  box-shadow: 0 0 0 4px var(--orange);
+}
+
 section.hero .shapes.one{ top: -80px;left: 10%; }
 
 section.hero .shapes.two{ bottom: 280px; left: 80px; }
@@ -245,13 +263,28 @@ section.quiz button.prev,
 section.quiz button.next {
   position: absolute;
   top: calc(50% - 8px);
-  padding: 32px;
-  border: 1px solid #72ECFC;
+  border: none;
   background: none;
 }
 
-section.quiz button.prev{ left: 16px }
-section.quiz button.next{ right: 16px }
+section.quiz button.prev{ left: 64px }
+section.quiz button.next{ right: 64px }
+
+section.quiz button img{
+  width: 56px;
+  padding: 8px;
+  border: 1px solid #72ECFC;
+}
+
+section.quiz button:hover img{
+  background: var(--orange);
+  box-shadow: 0 0 0 4px var(--orange);
+}
+
+section.quiz button.prev img{ transform: rotate(90deg) }
+section.quiz button.next img{ transform: rotate(-90deg) }
+
+section.quiz[data-step='step-1'] button.prev{ display: none }
 
 
 section.quiz .content-wrap{
@@ -286,6 +319,13 @@ section.quiz p.disclaimer{
   font-size: .75em;
   letter-spacing: 1px;
   text-align: center;
+}
+
+section.quiz p.disclaimer span{
+  background: var(--orange);
+  border: 4px solid var(--orange);
+    border-top: 6px solid var(--orange);
+    border-right: 12px solid var(--orange);
 }
 
 section.quiz form .slider{
@@ -327,6 +367,44 @@ section.quiz form input[type='range']::-webkit-slider-thumb{
   width: 16px; height: 16px;
   background: var(--orange);
   border: 2px solid var(--orange);
+}
+
+section.quiz form .radios{
+  display: flex;
+    flex-wrap: wrap;
+  width: 80%;
+  margin: 0;
+    margin-top: -49px;
+    margin-left: 20%;
+}
+
+section.quiz form .radios > div{
+  display: flex;
+    align-items: center;
+  width: 50%;
+  min-height: 56px;
+  margin-bottom: 16px;
+}
+
+section.quiz form .radios input{
+  appearance: none;
+  width: 20px; height: 20px;
+  border: 2px solid var(--blue);
+    border-radius: 50%;
+  transform: translateY(-2px);
+}
+
+section.quiz form .radios input:checked{ background: var(--blue) }
+
+section.quiz form .radios input:hover{ border: 4px solid var(--blue); cursor: pointer }
+
+section.quiz form .radios label{
+  width: calc(100% - 36px);
+  margin-left: 8px;
+  font-family: 'Univers',sans-serif;
+  font-size: 1.125em;
+  letter-spacing: 1px;
+  line-height: 1.4;
 }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -382,6 +460,35 @@ section.quiz .step h3{
   line-height: 1.2;
 }
 
+section.quiz .shapes.one{ top: 800px; right: 100px; }
+
+section.quiz .shapes.two{ bottom: 50px; left: -100px; }
+section.quiz .shapes.two .blue-box.two{ left:199px }
+section.quiz .shapes.two img{ width: 200px; height: 200px; top: -100px; left: 100px; }
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::  INTRO STEP                                                             ::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+section.quiz .step.step-one .intro{
+  
+}
+
+section.quiz .step.step-one .intro h3{
+  max-width: 750px;
+  margin: 64px auto 0 auto;
+  font-size: 4.8em;
+}
+
+section.quiz .step.step-one .intro p{
+  max-width: 750px;
+  margin: 32px auto 0 auto;
+  font-size: 1.25em;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  font-family: 'Univers', sans-serif;
+}
+
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 ::::::::::::::::::::  MINEFIELD                                                              ::::::::::::::::::::
@@ -418,15 +525,33 @@ section.result .content-wrap{
   display: flex;
 }
 
+section.result .result-instructions{
+  font-family: 'Univers',sans-serif;
+}
+
+section.result .result-instructions h2{
+  max-width: 750px;
+  margin: 64px auto 0 auto;
+  font-weight: 600;
+  font-size: 4.4em;
+}
+
+section.result .result-instructions p{
+  max-width: 600px;
+  font-size: 1.25em;
+  line-height: 1.4;
+  margin-top: 16px;
+}
+
 #poster{
   display: flex;
     justify-content: center;
-  /* transform: scale(.9); */
+  transform: scale(.9);
 }
 
 section.result .poster-parent{
   width: 96vh;
-  /* border: 1px solid var(--blue); */
+  border: 1px solid var(--blue);
   overflow: hidden;
 }
 
@@ -480,7 +605,8 @@ section.result .poster-row .poster-tile[data-bombs='3'] span{
   transform: translateY(-1.1vh)
 }
 
-section.result .poster-row .poster-tile[data-bombs='4'] span{
+section.result .poster-row .poster-tile[data-bombs='4'] span,
+section.result .poster-row .poster-tile[data-bombs='5'] span{
   font-family: 'Univers', sans-serif;
   font-weight: 600;
   font-size: 8em;

@@ -46,79 +46,109 @@
             <img class='logo-img three' src='MEDIA/SQUARES/4-gray.png'>
             <img class='center-logo' src='MEDIA/main-logo.svg'/>
           </div>
-          <a href='#quiz'>Questionnaire<span><!----></span></a>
+          <a href='#quiz'>Questionnaire<img src='MEDIA/arrow-icon.svg'/></a>
         </div></section>
 
-        <section id='quiz' class='quiz'><button class='prev'>&lt;</button><div class='content-wrap'>
-          <h2>Global Footprint questionnaire</h2>
-          <form>
-            <div class='step step-one'>
-              <div class='top'>
-                <div class='blob'>
-                  <p>1</p>
-                  <img src='MEDIA/SQUARES/2-gray.png'/>
+        <section id='quiz' class='quiz' data-step='step-1'>
+          <div class='shapes one'><div class='blue-box'></div></div>
+          <div class='shapes two'><img src='MEDIA/SQUARES/5-gray.png'/><div class='blue-box one'></div><div class='blue-box two'></div></div>
+          <button class='prev'><img src='MEDIA/arrow-icon.svg'/></button>
+          <div class='content-wrap'>
+            <h2>Global Footprint questionnaire</h2>
+            <form>
+              <div class='step step-one'>
+                <div class='intro'>
+                  <h3>What's your Impact?</h3>
+                  <p>Lorem ipsum, dolor sit amet consect*etur adipisicing elit. Maiores* numquam nobis natus quis expedita suscipit, consequuntur autem pariatur ea. Eveniet animi atque eligendi modi amet! Officiis, recusandae ex? Impedit, nihil.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem aliquam omnis maiores et sit quo iure voluptatem dolores soluta exercitationem. Nisi obcaecati sapiente aut natus saepe? Commodi recusandae quam vel.</p>
                 </div>
-                <h3>How often do you eat animal-based&nbsp;products?</h3>
               </div>
-              <div class='slider'>
-                <p class='min'>Never</p>
-                <input type='range' min='0' max='4' value='3'/>
-                <p class='max'>Very Often</p>
-                <p class='curr'>often</p>
-              </div>
-            </div>
-            <div class='step step-two'>
-              <div class='top'>
-                <div class='blob'>
-                  <p>2</p>
-                  <img src='MEDIA/SQUARES/1-gray.png'/>
+              <div class='step step-two'>
+                <div class='top'>
+                  <div class='blob'>
+                    <p>1</p>
+                    <img src='MEDIA/SQUARES/2-gray.png'/>
+                  </div>
+                  <h3>How often do you eat animal-based&nbsp;products?</h3>
                 </div>
-                <h3>How much of the food that you eat is unprocessed, unpackaged, or locally grown?</h3>
-              </div>
-              <div class='slider'>
-                <p class='min'>None</p>
-                <input type='range' min='0' max='99' value='50'/>
-                <p class='max'>All</p>
-                <p class='curr'>50%</p>
-              </div>
-            </div>
-            <div class='step step-three'>
-              <div class='top'>
-                <div class='blob'>
-                  <p>3</p>
-                  <img src='MEDIA/SQUARES/3-gray.png'/>
+                <div class='slider'>
+                  <p class='min'>Never</p>
+                  <input type='range' min='0' max='4' value='3'/>
+                  <p class='max'>Very Often</p>
+                  <p class='curr'>often</p>
                 </div>
-                <h3>Which housing type best describes your home?</h3>
               </div>
-              <label for='no-water'>Freestanding, no running water</label><input id='no-water' type='radio'/>
-              <label for='water'>Freestanding, running water</label><input id='water' type='radio'/>
-              <label for='apartment'>Multi-story apartment</label><input id='apartment' type='radio'/>
-              <label for='duplex'>Duplex, row house, or building with 2-4 housing units</label><input id='duplex' type='radio'/>
-              <label for='condo'>Luxury condominium</label><input id='condo' type='radio'/>
-            </div>
-            <div class='step step-four'>
-              <h3>What material is your house constructed with?</h3>
-              <label for='straw'>Straw/Bamboo</label><input id='straw' type='radio'/>
-              <label for='wood'>Wood</label><input id='wood' type='radio'/>
-              <label for='brick'>Brick/Concrete</label><input id='brick' type='radio'/>
-              <label for='adobe'>Adobe</label><input id='adobe' type='radio'/>
-              <label for='steel'>Steel/Other</label><input id='steel' type='radio'/>
-            </div>
-          </form>
-          <p class='disclaimer'>This questionnaire was taken from the Global Footprint Network&reg;</p>
-        </div><button class='next'>&gt;</button></section>
+              <div class='step step-three'>
+                <div class='top'>
+                  <div class='blob'>
+                    <p>2</p>
+                    <img src='MEDIA/SQUARES/1-gray.png'/>
+                  </div>
+                  <h3>How much of the food that you eat is unprocessed, unpackaged, or locally grown?</h3>
+                </div>
+                <div class='slider'>
+                  <p class='min'>None</p>
+                  <input type='range' min='0' max='99' value='50'/>
+                  <p class='max'>All</p>
+                  <p class='curr'>50%</p>
+                </div>
+              </div>
+              <div class='step step-four'>
+                <div class='top'>
+                  <div class='blob'>
+                    <p>3</p>
+                    <img src='MEDIA/SQUARES/3-gray.png'/>
+                  </div>
+                  <h3>Which housing type best describes your home?</h3>
+                </div>
+                <div class='radios'>
+                  <div><input id='no-water' type='radio'/><label for='no-water'>Freestanding, no running water</label></div>
+                  <div><input id='water' type='radio'/><label for='water'>Freestanding, running water</label></div>
+                  <div><input id='apartment' type='radio'/><label for='apartment'>Multi-story apartment</label></div>
+                  <div><input id='duplex' type='radio'/><label for='duplex'>Duplex, row house, or building with 2-4 housing units</label></div>
+                  <div><input id='condo' type='radio'/><label for='condo'>Luxury condominium</label></div>
+                </div>
+              </div>
+              <div class='step step-five'>
+                <div class='top'>
+                  <div class='blob'>
+                    <p>4</p>
+                    <img src='MEDIA/SQUARES/4-gray.png'/>
+                  </div>
+                  <h3>What material is your house constructed with?</h3>
+                </div>
+                <div class='radios'>
+                  <div><input id='straw' type='radio'/><label for='straw'>Straw/Bamboo</label></div>
+                  <div><input id='wood' type='radio'/><label for='wood'>Wood</label></div>
+                  <div><input id='brick' type='radio'/><label for='brick'>Brick/Concrete</label></div>
+                  <div><input id='adobe' type='radio'/><label for='adobe'>Adobe</label></div>
+                  <div><input id='steel' type='radio'/><label for='steel'>Steel/Other</label></div>
+                </div>
+              </div>
+            </form>
+            <p class='disclaimer'>This questionnaire was taken from the <span>Global Footprint Network&reg;</span></p>
+          </div>
+          <button class='next'><img src='MEDIA/arrow-icon.svg'/></button>
+        </section>
 
         <section id='minefield' class='minefield'><div class='content-wrap'>
           <p class='instructions'>Based on your answers, we've set up a game of Minesweeper for you to play!</p>
           <div id='minefield-game'> <!-- Minefield --> </div>
+          <a href='https://www.instructables.com/How-to-play-minesweeper/#:~:text=The%20rule%20of%20the%20game,that%20there%20is%20a%20mine.' target="_blank">Don't know the rules? Find out how to play!</a>
         </div></section>
 
         <section id='result' class='result'><div class='content-wrap'>
           <div class='result-instructions'>
             <h2>Some Words</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur amet quos accusantium, saepe impedit distinctio sed eaque vero cupiditate aliquam animi voluptatem, praesentium aut hic dolorum? Ad, iste maxime! Nam?</p>
+            <a href="#final-thoughts">Food for thought...</a>
           </div>
           <div id='poster'><!-- JS --></div>
+        </div></section>
+
+        <section id='final-thoughts'><div class='content-wrap'>
+          <h2>Something</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ea quis exercitationem. Unde voluptates consectetur odio magni doloremque ipsa eaque ipsum nobis fugit, doloribus dolores consequatur maiores, nemo mollitia voluptas!</p>
         </div></section>
 
         <!-- SCRIPTS -->

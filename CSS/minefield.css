@@ -51,7 +51,8 @@ ul.field li.tile{
   color: #000; 
 }
 .tile[bombs='3'],
-.tile[bombs='4']{
+.tile[bombs='4'],
+.tile[bombs='5']{
   font-family: 'Univers';
   font-size: 1.25rem;
   font-weight: 600; 

@@ -22,12 +22,11 @@ class QUIZ{
     console.log(this.slides.length);
 
     if(this.currentSlide === this.slides.length - 1){
-      // Actually, submit the thing
-      // this.currentSlide = 0;
       this.callback();
     }else{
       this.currentSlide++;
       this.elem.style.transform = `translateX(${-20 * (this.currentSlide)}%)`;
+      this.elem.parentElement.parentElement.dataset.step = 'step-'+ ( this.currentSlide+1 );
     }
   }
 
@@ -39,6 +38,7 @@ class QUIZ{
       this.currentSlide = this.slides.length - 1;
     }else{
       this.currentSlide--;
+      this.elem.parentElement.parentElement.dataset.step = 'step-'+ ( this.currentSlide+1 );
     }
 
     this.elem.style.transform = `translateX(${-20 * (this.currentSlide)}%)`;

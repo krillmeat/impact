@@ -1,4 +1,4 @@
-const displayString = "the world is cool";
+const displayString = "know your impact";
 
 class POSTER{
   constructor(elem,outcome){
