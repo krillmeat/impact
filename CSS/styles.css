@@ -510,18 +510,47 @@ section.quiz .step.step-one .intro p{
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
+section.minefield{ position: relative }
+
 section.minefield .content-wrap{
   height: 100vh;
   padding-top: 124px;
+  position: relative;
 }
 
-section.minefield .instructions{
-  font-family: 'Univers',sans-serif;
-  margin-bottom: 64px;
+section.minefield .content-wrap #minefield-game{ margin-bottom: 0px }
+
+section.minefield a{
+  font-family: 'Univers', sans-serif;
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
 }
 
-section.minefield .content-wrap #minefield-game{margin-bottom: 0px }
+section.minefield a span{
+  background: var(--orange);
+  border: 8px solid var(--orange);
+    border-left: 4px solid var(--orange);
+    border-right: 12px solid var(--orange);
+}
 
+section.minefield .shapes.one{ top: 150px; right: 75px; }
+
+section.minefield .shapes.one img{ width: 500px; top: 50px; right: -400px; }
+section.minefield .shapes.one .blue-box.two{ top: 199px }
+section.minefield .shapes.one .blue-box.three{ top: 398px }
+
+section.minefield .shapes.two{ bottom: 300px; left: 75px; }
+section.minefield .shapes.two .blue-box.two{ top: 199px }
+section.minefield .shapes.two img:first-of-type{ width: 300px; top: 150px; left: -50px; }
+section.minefield .shapes.two img:nth-of-type(2){ width: 100px; top: 150px; left: 50px; }
 
 /*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::::::::::::::::::::                                                                         ::::::::::::::::::::
@@ -530,6 +559,7 @@ section.minefield .content-wrap #minefield-game{margin-bottom: 0px }
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 section.result{
+  position: relative;
   height: 100vh;
   padding: 2vh;
 }
@@ -557,7 +587,7 @@ section.result .result-instructions h2{
 
 section.result .result-instructions p{
   max-width: 600px;
-  font-size: 1.25em;
+  font-size: 1.125em;
   line-height: 1.4;
   margin-top: 16px;
 }
@@ -666,3 +696,7 @@ section.result .poster-tile[data-state='bomb-detonated'] img{
   width: 48vh;
   z-index: -2;
 }
+
+section.result .shapes.one{ bottom: 470px; left: 0px; z-index: -1; }
+section.result .shapes.one img:first-of-type{ width: 300px; left: -230px; top: -50px;}
+section.result .shapes.one img:last-of-type{ width: 100px; }
