@@ -106,6 +106,7 @@ nav.top .desktop ul{
 }
 
 nav.top .desktop ul li a{
+  display: none; /* Maybe if I have time, I can do a full "more stuff" page */
   padding: 6px 8px 4px 12px;
   font-family: 'Univers',sans-serif;
   font-size: .875em;
@@ -411,6 +412,19 @@ section.quiz form .radios label{
 ::::::::::::::::::::  STEP                                                                   ::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
+section.quiz form .step .shapes.four{
+  
+}
+
+section.quiz form .step .shapes.three img{
+  width: 200px; top: 50px; left: -50px;
+  z-index: -1;
+}
+
+section.quiz form .step .shapes.three img:last-of-type{
+  width: 100px; top: -25px; left: -75px;
+}
+
 section.quiz form .step{
   width: 20%;
   padding: 32px 200px;
@@ -471,19 +485,20 @@ section.quiz .shapes.two img{ width: 200px; height: 200px; top: -100px; left: 10
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
 
 section.quiz .step.step-one .intro{
-  
+  position: relative;
+  z-index: 10;
 }
 
 section.quiz .step.step-one .intro h3{
   max-width: 750px;
-  margin: 64px auto 0 auto;
+  margin: 32px auto 0 auto;
   font-size: 4.8em;
 }
 
 section.quiz .step.step-one .intro p{
   max-width: 750px;
   margin: 32px auto 0 auto;
-  font-size: 1.25em;
+  font-size: 1.125em;
   line-height: 1.4;
   letter-spacing: 1px;
   font-family: 'Univers', sans-serif;
@@ -523,17 +538,21 @@ section.result .content-wrap{
   width: 90%;
   max-width: 10000px;
   display: flex;
+    align-items: flex-end;
 }
 
 section.result .result-instructions{
+  width: 50%;
   font-family: 'Univers',sans-serif;
+  padding-bottom: 64px;
 }
 
 section.result .result-instructions h2{
-  max-width: 750px;
-  margin: 64px auto 0 auto;
+  max-width: 600px;
+  margin: 0 auto 0 0;
   font-weight: 600;
   font-size: 4.4em;
+  text-align: left;
 }
 
 section.result .result-instructions p{
@@ -541,6 +560,10 @@ section.result .result-instructions p{
   font-size: 1.25em;
   line-height: 1.4;
   margin-top: 16px;
+}
+
+section.result .result-instructions a{ 
+  display: none; /* Maybe if I have time, I can do a full "more stuff" page */
 }
 
 #poster{
